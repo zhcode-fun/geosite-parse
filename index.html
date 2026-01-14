@@ -140,7 +140,7 @@ message GeoSiteList {
         const rightDomains = item.domain.filter(item2 => item2.value.includes(keyword));
         if (rightDomains.length > 0) {
           htmlStr += `<div style="border-bottom:2px dashed #4397ff30;margin-bottom:10px;padding-bottom:10px">`;
-          htmlStr += `<div style="font-weight:bold;">类别: ${item.category}</div>`;
+          htmlStr += `<div style="font-weight:bold;">类别: ${item.category.toLowerCase()}</div>`;
           htmlStr += rightDomains.map(item2 => {
             const attrs = item2.attribute.map(attr => `<span style="margin-left:2px;color:purple;">@${attr.key}</span>`).join('');
             return `<div>
